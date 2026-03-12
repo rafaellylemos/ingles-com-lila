@@ -17,7 +17,7 @@ const MaintenancePage = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       >
-        {/* Foto da Lila */}
+        {/* Foto */}
         <motion.div 
           className="relative mb-10"
           whileHover={{ scale: 1.02 }}
@@ -28,7 +28,7 @@ const MaintenancePage = () => {
               src="/assets/lila-brasileiro.jpg" 
               alt="Lila Brasileiro"
               fill
-              className="object-cover"
+              className="object-cover scale-110 object-top"
               priority
             />
           </div>
@@ -65,16 +65,16 @@ const MaintenancePage = () => {
               href="https://instagram.com/inglescomlila"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full group flex items-center gap-5 px-4 py-3 bg-navy text-white rounded-full transition-all hover:bg-gold hover:text-navy shadow-xl shadow-navy/10"
+              className="w-full group flex items-center gap-4 px-4 py-3 bg-navy text-white rounded-full transition-all hover:bg-gold hover:text-navy shadow-xl shadow-navy/10"
               whileHover={{ x: 5 }}
             >
               <div className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-navy/10">
                 <Instagram size={18} />
               </div>
-              <span className="font-sans font-black uppercase text-[10px] tracking-[0.2em] flex-1 text-left">
+              <span className="font-sans font-black uppercase text-[10px] tracking-[0.2em] flex-1 text-left text-nowrap">
                 Instagram
               </span>
-              <ArrowRight size={14} className="opacity-30 group-hover:opacity-100" />
+              <ArrowRight size={14} className="opacity-30 group-hover:opacity-100 transition-all" />
             </motion.a>
 
             {/* YouTube */}
@@ -82,16 +82,16 @@ const MaintenancePage = () => {
               href="https://www.youtube.com/inglescomlila"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full group flex items-center gap-5 px-4 py-3 border border-navy/10 text-navy rounded-full transition-all hover:border-gold hover:text-gold shadow-sm"
+              className="w-full group flex items-center gap-4 px-4 py-3 border border-navy/10 text-navy rounded-full transition-all hover:border-gold hover:text-gold shadow-sm"
               whileHover={{ x: 5 }}
             >
               <div className="w-8 h-8 bg-navy/5 rounded-full flex items-center justify-center group-hover:bg-gold/10">
                 <Youtube size={18} />
               </div>
-              <span className="font-sans font-black uppercase text-[10px] tracking-[0.2em] flex-1 text-left">
+              <span className="font-sans font-black uppercase text-[10px] tracking-[0.2em] flex-1 text-left text-nowrap">
                 YouTube
               </span>
-              <ArrowRight size={14} className="opacity-30 group-hover:opacity-100" />
+              <ArrowRight size={14} className="opacity-30 group-hover:opacity-100 transition-all" />
             </motion.a>
           </div>
         </div>
@@ -112,7 +112,7 @@ const MaintenancePage = () => {
           </a>
         </div>
 
-        {/* Novo Footer: Copyright & Credits */}
+        {/* Footer */}
         <footer className="w-full pt-8 border-t border-slate-100/50 flex flex-col gap-2">
           <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-navy/30">
             © 2026 Lila Brasileiro. All rights reserved.
