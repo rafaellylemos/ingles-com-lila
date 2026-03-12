@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Instagram, Youtube, MessageCircle, ArrowRight } from "lucide-react";
 
@@ -11,13 +12,31 @@ const MaintenancePage = () => {
       <div className="absolute top-0 left-0 w-full h-1 bg-navy/5" />
 
       <motion.div
-        className="relative z-10 text-center px-6 max-w-2xl"
+        className="relative z-10 text-center px-6 py-12 max-w-2xl flex flex-col items-center"
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       >
+        {/* Foto da Lila */}
+        <motion.div 
+          className="relative mb-10"
+          whileHover={{ scale: 1.02 }}
+          transition={{ type: "spring", stiffness: 300 }}
+        >
+          <div className="w-32 h-32 md:w-40 md:h-40 rounded-full border-[6px] border-white shadow-2xl shadow-navy/10 overflow-hidden relative z-10">
+            <Image 
+              src="/assets/lila-brasileiro.jpg" 
+              alt="Lila Brasileiro"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+          <div className="absolute -inset-4 bg-gold/5 rounded-full blur-3xl z-0" />
+        </motion.div>
+
         {/* Branding */}
-        <div className="mb-16">
+        <div className="mb-8">
           <span className="text-[10px] font-black uppercase tracking-[0.5em] text-navy/30">
             inglês com lila
           </span>
@@ -29,9 +48,9 @@ const MaintenancePage = () => {
           <span className="italic font-normal text-gold text-5xl md:text-7xl">making it better.</span>
         </h1>
         
-        {/* Copy - "por aqui" removido para evitar repetição */}
+        {/* Copy */}
         <p className="text-navy/80 text-lg md:text-xl font-medium leading-relaxed mb-12 max-w-sm mx-auto">
-          Resolvi dar um <i>refresh</i> no meu espaço. O site novo está ficando pronto, 
+          Resolvi dar um <i>refresh</i> no nosso espaço. O site novo está ficando pronto, 
           do jeito que a gente gosta: prático e sem frescura.
         </p>
         
@@ -77,8 +96,8 @@ const MaintenancePage = () => {
           </div>
         </div>
 
-        {/* Rodapé - Volta do "Need something?" */}
-        <div className="mt-24 pt-8 border-t border-slate-100/50">
+        {/* Suporte WhatsApp */}
+        <div className="mt-16 mb-20 w-full flex flex-col items-center">
           <p className="text-[10px] font-black uppercase tracking-[0.3em] text-navy/20 mb-5">
             Need something?
           </p>
@@ -86,12 +105,22 @@ const MaintenancePage = () => {
             href="https://wa.me/19787939832" 
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-8 py-3 bg-white border border-slate-200 rounded-full text-[11px] font-bold uppercase tracking-[0.1em] text-navy/60 hover:text-green-600 hover:border-green-100 hover:bg-green-50/30 transition-all shadow-sm"
+            className="inline-flex items-center gap-3 px-8 py-3 bg-white border border-slate-200 rounded-full text-[11px] font-bold uppercase tracking-[0.1em] text-navy/60 hover:text-green-600 hover:border-green-100 hover:bg-green-50/30 transition-all shadow-sm group"
           >
-            <MessageCircle size={16} className="text-green-500" />
+            <MessageCircle size={16} className="text-green-500 transition-transform group-hover:scale-110" />
             Chama no WhatsApp
           </a>
         </div>
+
+        {/* Novo Footer: Copyright & Credits */}
+        <footer className="w-full pt-8 border-t border-slate-100/50 flex flex-col gap-2">
+          <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-navy/30">
+            © 2026 Lila Brasileiro. All rights reserved.
+          </p>
+          <p className="text-[8px] font-medium uppercase tracking-[0.1em] text-navy/20">
+            Design & Code by <span className="text-navy/40">Rafaelly Lemos</span>
+          </p>
+        </footer>
       </motion.div>
 
       {/* Marca d'água */}
